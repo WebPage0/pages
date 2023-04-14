@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <link rel="icon" href="https://github.com/WebPage0/pages/blob/main/DeckDash/Favv.png?raw=true">
+    <title>Game Test 110_B - Deck Dash</title>
+   </head>
+   
+   <body>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom right, black, rgb(69, 69, 69), black);
+            background-repeat: no-repeat;
+            
+           background-attachment: fixed;
+        }
+       .Card {
+        cursor: pointer;
+           width: 200px;
+           transition: 0.5s;
+            height: 250px;
+            background-color: rgb(159, 159, 159);
+            position: absolute;
+            
+           top: 50%;
+           left: 50%;
+           border-radius: 5px; 
+           color: black;
+           transform: translate(-50%, -50%);
+       }
+       .Card2 {
+        cursor: pointer;
+           width: 200px;
+           transition: 0.5s;
+            height: 250px;
+            background-color: rgb(159, 159, 159);
+            position: absolute;
+            
+           top: 50%;
+           left: 80%;
+           border-radius: 5px; 
+           color: black;
+           transform: translate(-50%, -50%);
+       }
+       .Card3 {
+        cursor: pointer;
+           width: 200px;
+            height: 250px;
+            background-color: rgb(159, 159, 159);
+            position: absolute;
+            transition: 0.5s;
+           top: 50%;
+           left: 20%;
+           border-radius: 5px; 
+           color: black;
+           transform: translate(-50%, -50%);
+       }
+       .CardTextTop {
+           color: black;
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: large;
+            top: 0;
+             left: 0;
+             position: absolute;
+           margin: 10px;
+       }
+       .CardTextBottom {
+           color: black;
+           position: absolute;
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: large;
+            bottom: 0;
+             right: 0;
+           margin: 10px;
+       }
+
+       @keyframes SlideIn {
+       
+        from {
+            opacity: 0;
+        } 
+        to {
+            opacity: 1;
+        }
+       }
+       @keyframes SlideOut {
+        from {
+            opacity: 0;
+        } 
+        to {
+            opacity: 1;
+        }
+       }
+
+       .cssbuttons-io-button {
+  background: #353535;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  position: absolute;
+  left: 50%; 
+  transform: translate(-50%, 0%);
+  top: 80%;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #2e2e2e;
+  overflow: hidden;
+ 
+  height: 2.8em;
+  padding-right: 3.3em;
+}
+
+.cssbuttons-io-button .icon {
+  background: rgb(76, 76, 76);
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #2f2f2f;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #ffffff;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+.cardv {
+  width: 350px;
+  background: white;
+  padding: 20px;
+    top: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 15px;
+    left: 50%;
+    z-index: 9;
+    transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.cardv .title {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.cardv .description {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.cardv .prefs {
+  color: blue;
+}
+
+.cardv .actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8em;
+}
+
+
+
+
+
+
+
+   </style>
+  
+    <div style="top: 15px; position: absolute; width: 100%;">
+            <img style="left: 10px; position: relative; width: 100px; height: 100px; border-radius: 15px;" src="https://github.com/WebPage0/pages/blob/main/DeckDash/Logo.png?raw=true"/>
+            <h1 style="font-size: larger; font-family: Arial, Helvetica, sans-serif; top: 25px; color: white; position: absolute; left: 125px;">Deck Dash</h1>
+    </div>
+       <div class="Card" id="CardEx" style="z-index: 5; display: none;">
+           <h3 class="CardTextTop" id="sValueForCard1">
+               TESTCARD
+           </h3>
+           <h3 class="CardTextBottom" id="sValueForCard2">
+               TESTCARD
+           </h3>
+       </div>
+
+    <!--Player One-->
+    <div id="PlayerScreenOne" style="transition: 0.5s; animation: SlideIn 0.8s;">
+        <h1 style="left: 50%; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute; top: 15%; transform: translate(-50%, -0%);">Player One's Turn!</h1>
+        <div onclick="SelectCard(1)" class="Card" id="Card1" style="">
+            <h3 class="CardTextTop" id="ValueForCard1">
+            
+            </h3>
+            <h3 class="CardTextBottom" id="ValueForCard2">
+            
+            </h3>
+        </div>
+        <!--Card2-->
+        <div onclick="SelectCard(2)" class="Card2" id="Card2" style="">
+            <h3 class="CardTextTop" id="ValueForCard3">
+            
+            </h3>
+            <h3 class="CardTextBottom" id="ValueForCard4">
+            
+            </h3>
+        </div>
+
+        <!--Card3-->
+        <div onclick="SelectCard(3)" class="Card3" id="Card3" style="">
+            <h3 class="CardTextTop" id="ValueForCard5">
+            
+            </h3>
+            <h3 class="CardTextBottom" id="ValueForCard6">
+            
+            </h3>
+        </div>
+
+    </div>
+
+     <!--Player Two-->
+     <div id="PlayerScreenTwo" style="display: none;">
+        <h1 style="left: 50%; color: white; font-family: Arial, Helvetica, sans-serif; position: absolute; top: 15%; transform: translate(-50%, -0%);">Player Two's Turn!</h1>
+
+        <div onclick="SelectCard(4)" class="Card" id="Card4" style="">
+            <h3 class="CardTextTop" id="ValueForCard7">
+            
+            </h3>
+            <h3 class="CardTextBottom" id="ValueForCard8">
+            
+            </h3>
+        </div>
+        <!--Card2-->
+        <div class="Card2" onclick="SelectCard(5)" id="Card5" style="">
+            <h3 class="CardTextTop" id="ValueForCard9">
+            
+            </h3>
+            <h3 class="CardTextBottom" id="ValueForCard10">
+            
+            </h3>
+        </div>
+
+        <!--Card3-->
+        <div onclick="SelectCard(6)" class="Card3" id="Card6" style="">
+            <h3 class="CardTextTop" id="ValueForCard11">
+            
+            </h3>
+            <h3 class="CardTextBottom" id="ValueForCard12">
+            
+            </h3>
+        </div>
+
+    </div>
+
+</div>
+
+    <style>
+        @keyframes Result {
+            from {
+                top: 20%; 
+                font-size: 350%;
+            }
+            to {
+                top: 5%; font-size: xx-large;
+            }
+        }
+    </style>
+
+       <div id="FinalScreen" style="display: none;">
+        <h1 style="animation: Result 0.8s;  position: absolute; left: 50%; top: 5%; font-size: xx-large; transition: 0.5s; transform: translate(-50%, -50%); color: white; font-family: Arial, Helvetica, sans-serif;">Game Result</h1>
+        <h1 id="ResultTXT" style="opacity: 0; position: absolute; left: 50%; top: 50%;  transition: 0.5s; transform: translate(-50%, -50%); color: white; font-family: Arial, Helvetica, sans-serif;"></h1>
+    
+        <button onclick="window.location.reload()" class="cssbuttons-io-button"> Play Again
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+            </div>
+          </button>
+    </div>
+
+      
+       <noscript>
+           This Game Uses Javascript Please Allow It.
+       </noscript>
+       <script>
+            var PlayerOneScreen = document.getElementById("PlayerScreenOne")
+            var PlayerTwoScreen = document.getElementById("PlayerScreenTwo")
+            var PlayerReslutScreen = document.getElementById("FinalScreen")
+
+
+            Setup()
+           
+            function Setup() {
+                //Define Card
+                var CardExample = document.getElementById('CardEx');
+                var Carda1 = document.getElementById('Card1')
+                var Carda2 = document.getElementById('Card2')
+                var Carda3 = document.getElementById('Card3')
+
+
+                CardExample.style.display = "none"
+
+                Carda1.style.opacity = 0;
+                Carda2.style.opacity = 0;
+                Carda3.style.opacity = 0;
+               setTimeout(() => {
+                Carda1.style.opacity = 1;
+                Carda2.style.opacity = 1;
+                Carda3.style.opacity = 1;
+
+                Carda1.style.borderRadius = "30px"
+                Carda2.style.borderRadius = "30px"
+                Carda3.style.borderRadius = "30px"
+               }, 800);
+               
+                Generate()
+            }
+          
+            var CardValue1;
+            var CardValue2;
+            var CardValue3;
+
+            var CardValue4;
+            var CardValue5;
+            var CardValue6;
+
+            var Player1_Value;
+            var Player2_Value;
+
+           // Funtions For Game
+           function Generate() {
+                var NumCard1 = document.getElementById("ValueForCard1")
+                var NumCard2 = document.getElementById("ValueForCard2")
+                var NumCard3 = document.getElementById("ValueForCard3")
+                var NumCard4 = document.getElementById("ValueForCard4")
+                var NumCard5 = document.getElementById("ValueForCard5")
+                var NumCard6 = document.getElementById("ValueForCard6")
+     
+                var NumCard7 = document.getElementById("ValueForCard7")
+                var NumCard8 = document.getElementById("ValueForCard8")
+                var NumCard9 = document.getElementById("ValueForCard9")
+                var NumCard10 = document.getElementById("ValueForCard10")
+                var NumCard11 = document.getElementById("ValueForCard11")
+                var NumCard12 = document.getElementById("ValueForCard12")
+     
+
+                let NumForCard = Math.floor(Math.random() * 10) + 1; 
+                let NumForCard2 = Math.floor(Math.random() * 10) + 1; 
+                let NumForCard3 = Math.floor(Math.random() * 10) + 1; 
+
+                let NumForCard4 = Math.floor(Math.random() * 10) + 1; 
+                let NumForCard5 = Math.floor(Math.random() * 10) + 1; 
+                let NumForCard6 = Math.floor(Math.random() * 10) + 1; 
+
+
+                CardValue1 = NumForCard
+                CardValue2 = NumForCard2
+                CardValue3 = NumForCard3
+
+                CardValue4 = NumForCard4
+                CardValue5 = NumForCard5
+                CardValue6 = NumForCard6
+
+
+                console.log(CardValue1 + ' ' + CardValue2 + ' ' + CardValue3)
+
+                console.log(CardValue4 + ' ' + CardValue5 + ' ' + CardValue6)
+
+
+                    NumCard1.innerHTML = NumForCard;
+                    NumCard2.innerHTML = NumForCard;
+                    NumCard3.innerHTML = NumForCard2;
+                    NumCard4.innerHTML = NumForCard2;
+                    NumCard5.innerHTML = NumForCard3;
+                    NumCard6.innerHTML = NumForCard3;
+
+                    NumCard7.innerHTML = NumForCard4;
+                    NumCard8.innerHTML = NumForCard4;
+                    NumCard9.innerHTML = NumForCard5;
+                    NumCard10.innerHTML = NumForCard5;
+                    NumCard11.innerHTML = NumForCard6;
+                    NumCard12.innerHTML = NumForCard6;
+                  
+                
+               
+           }
+          
+           function SelectCard(NumberCard) {
+            if(NumberCard===1) {
+                Player1_Value = CardValue1
+                console.log(Player1_Value)
+                ContinuePlayerOne()
+            }
+            if(NumberCard===2) {
+                Player1_Value = CardValue2
+                console.log(Player1_Value)
+                ContinuePlayerOne()
+
+            }
+            if(NumberCard===3) {
+                Player1_Value = CardValue3
+                console.log(Player1_Value)
+                ContinuePlayerOne()
+            }
+            if(NumberCard===4) {
+                Player2_Value = CardValue4
+                console.log(Player2_Value)
+                ContinuePlayerTwo()
+               
+            }
+            if(NumberCard===5) {
+                Player2_Value = CardValue5
+                console.log(Player2_Value)
+               ContinuePlayerTwo()
+
+            }
+            if(NumberCard===6) {
+                Player2_Value = CardValue6
+                console.log(Player2_Value)
+               ContinuePlayerTwo()
+            }
+            
+           }
+
+           function ContinuePlayerOne() {
+                
+
+                var Card4 = document.getElementById('Card4')
+                var Card5 = document.getElementById('Card5')
+                var Card6 = document.getElementById('Card6')
+
+                var Carda1 = document.getElementById('Card1')
+                var Carda2 = document.getElementById('Card2')
+                var Carda3 = document.getElementById('Card3')
+
+                
+                Carda1.style.opacity = 1;
+                Carda2.style.opacity = 1;
+                Carda3.style.opacity = 1;
+                Carda1.style.borderRadius = "5px"
+                Carda2.style.borderRadius = "5px"
+                Carda3.style.borderRadius = "5px"
+               setTimeout(() => {
+                Carda1.style.opacity = 0;
+                Carda2.style.opacity = 0;
+                Carda3.style.opacity = 0;
+
+               
+                setTimeout(() => {
+                    PlayerTwoScreen.style.animation = 'SlideOut 0.8s';
+                    PlayerOneScreen.style.display = "none"
+                    PlayerTwoScreen.style.display = "block"
+
+                        Card4.style.opacity = 0;
+                        Card5.style.opacity = 0;
+                        Card6.style.opacity = 0;
+                    setTimeout(() => {
+                        Card4.style.opacity = 1;
+                        Card5.style.opacity = 1;
+                        Card6.style.opacity = 1;
+
+                        Card4.style.borderRadius = "30px"
+                        Card5.style.borderRadius = "30px"
+                        Card6.style.borderRadius = "30px"
+                    }, 800);
+                }, 700);
+               }, 600);
+           }
+
+           function ContinuePlayerTwo() {
+                
+   var Card4 = document.getElementById('Card4')
+                var Card5 = document.getElementById('Card5')
+                var Card6 = document.getElementById('Card6')
+
+          
+
+                
+                Card4.style.opacity = 1;
+                Card5.style.opacity = 1;
+                Card6.style.opacity = 1;
+                Card4.style.borderRadius = "5px"
+                Card5.style.borderRadius = "5px"
+                Card6.style.borderRadius = "5px"
+               setTimeout(() => {
+                Card4.style.opacity = 0;
+                Card5.style.opacity = 0;
+                Card6.style.opacity = 0;
+
+               
+                setTimeout(() => {
+                    PlayerTwoScreen.style.animation = 'SlideOut 0.8s';
+                    PlayerTwoScreen.style.display = "none"
+                    
+
+                        Card4.style.opacity = 0;
+                        Card5.style.opacity = 0;
+                        Card6.style.opacity = 0;
+                    setTimeout(() => {
+                     
+                        Card4.style.borderRadius = "5px"
+                        Card5.style.borderRadius = "5px"
+                        Card6.style.borderRadius = "5px"
+                        setTimeout(() => {
+                          RuslutStart()
+                        }, 1000);
+                    }, 800);
+
+                }, 700);
+               }, 600);
+                            
+                            
+                        
+                  
+               
+               
+           }
+
+           function RuslutStart() {
+            PlayerReslutScreen.style.display = "block"
+            var ResultText = document.getElementById('ResultTXT')
+            setTimeout(() => {
+                if (Player1_Value < Player2_Value) {
+                console.log(`Player 2 Wins!`);
+                ResultText.style.opacity = 1
+                ResultText.innerHTML = "Player 2 Wins!"
+                } else {
+                ResultText.style.opacity = 1
+                console.log(`Player 1 Wins!`);
+                ResultText.innerHTML = "Player 1 Wins!"
+                }
+            }, 800);
+           
+           }
+
+           //Handle Errors
+
+
+           window.onerror = function(msg, url, linenumber) {
+               alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+               return true;
+           }
+       </script>
+   </body>
+</html>
+
