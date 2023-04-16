@@ -1,0 +1,261 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+</head>
+
+<body>
+    <style>
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+   z-index: -9;
+   content: "";
+  position: absolute;
+  inset: 0;
+  background:linear-gradient(90deg,red,blue,rgb(0, 255, 0)) left/400% 100%;
+  animation:f 10s infinite alternate linear;
+ 
+  
+
+
+}
+
+@keyframes f {
+  100% {background-position:right}
+}
+
+.profile {
+    opacity: 1;
+    animation: Image 1s;
+}
+
+@keyframes Image {
+    from {
+        opacity: 0;
+        top: 50%;
+    }
+    to {
+        opacity: 1;
+        top: 30%;
+    }
+}
+.NameText {
+    opacity: 1;
+    animation: textt 1s;
+}
+
+@keyframes textt {
+    from {
+        opacity: 0;
+        top: 60%;
+    }
+    to {
+        opacity: 1;
+        top: 40%;
+    }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 160px;
+  height: 100px;
+  margin-left: -80px;
+  margin-top: -50px;
+  border-radius: 5px;
+  background: #1e3f57;
+  animation: dot1_ 3s cubic-bezier(0.55,0.3,0.24,0.99) infinite;
+}
+
+.loader:nth-child(2) {
+  z-index: 11;
+  width: 150px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -75px;
+  border-radius: 3px;
+  background: #3c517d;
+  animation-name: dot2_;
+}
+
+.loader:nth-child(3) {
+  z-index: 12;
+  width: 40px;
+  height: 20px;
+  margin-top: 50px;
+  margin-left: -20px;
+  border-radius: 0 0 5px 5px;
+  background: #6bb2cd;
+  animation-name: dot3_;
+}
+
+@keyframes dot1_ {
+  3%,97% {
+    width: 160px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -80px;
+  }
+
+  30%,36% {
+    width: 80px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -40px;
+  }
+
+  63%,69% {
+    width: 40px;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: -20px;
+  }
+}
+
+@keyframes dot2_ {
+  3%,97% {
+    height: 90px;
+    width: 150px;
+    margin-left: -75px;
+    margin-top: -45px;
+  }
+
+  30%,36% {
+    width: 70px;
+    height: 96px;
+    margin-left: -35px;
+    margin-top: -48px;
+  }
+
+  63%,69% {
+    width: 32px;
+    height: 60px;
+    margin-left: -16px;
+    margin-top: -30px;
+  }
+}
+
+@keyframes dot3_ {
+  3%,97% {
+    height: 20px;
+    width: 40px;
+    margin-left: -20px;
+    margin-top: 50px;
+  }
+
+  30%,36% {
+    width: 8px;
+    height: 8px;
+    margin-left: -5px;
+    margin-top: 49px;
+    border-radius: 8px;
+  }
+
+  63%,69% {
+    width: 16px;
+    height: 4px;
+    margin-left: -8px;
+    margin-top: -37px;
+    border-radius: 10px;
+  }
+}
+
+.button {
+  display: flex;
+  position: absolute;
+  
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2b2b;
+  color: #ffffff;
+ 
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button i {
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #3f3f3f;
+  color: #ffffff;
+}
+
+.button.facebook:hover {
+  border-color: #3b5999;
+}
+
+.button.twitter:hover {
+  border-color: #1da1f2;
+}
+
+.button.instagram:hover {
+  border-color: #e1306c;
+}
+
+.button.tiktok:hover {
+  border-color: #010101;
+}
+
+.button.youtube:hover {
+  border-color: #de463b;
+}
+
+
+      </style>
+   
+
+
+
+   <img id="profile" style=" top: 30%; left: 50%; opacity: 0; z-index: 9; border-radius: 30px; position: absolute; transform: translate(-50%, -50%);" width="100px" height="100px" alt="no image" src="https://github.com/Mr-funkinguy/Music-Player-/blob/main/guest.png?raw=true"/>
+
+      <h1 id="text" style="color: white; font-family: Arial, Helvetica, sans-serif; position: absolute; opacity: 0; top: 40%; left: 50%; transform : translate(-50%, -50%);">Name</h1>
+
+      <a href="#" style="top: 60%; width: 50%; left: 50%; transform: translate(-50%, -50%);" class="button facebook">
+        <i class="fab fa-facebook-f"></i>
+        <span>Facebook</span>
+      </a>
+ 
+      
+      <a href="#" style="top: 70%; width: 50%; left: 50%; transform: translate(-50%, -50%);" class="button instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      
+      <a href="#" style="top: 80%; width: 50%; left: 50%; transform: translate(-50%, -50%);" class="button tiktok">
+        <i class="fab fa-tiktok"></i>
+        <span>TikTok</span>
+      </a>
+      
+      <a href="#" style="top: 90%; width: 50%; left: 50%; transform: translate(-50%, -50%);" class="button youtube">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </a>
+      
+    
+
+
+</body>
+<script>
+    var img = document.getElementById("profile");
+    var text = document.getElementById("text");
+    img.addEventListener("load", function() {
+        img.style.opacity = 1;
+        img.classList.add("profile");
+        text.style.opacity = 1;
+        text.classList.add("NameText");
+    });
+
+</script>
+</html>
