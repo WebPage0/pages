@@ -97,7 +97,29 @@ z-index: 1;
     <img style="width: 35px; height: 35px;" src="https://github.com/WebPage0/pages/blob/main/BakeSale/logo.png?raw=true" />
     
   </div>
-   <h1 style="top: 50%; position: absolute; left: 50%; color: white; transform: translate(-50%, -50%);">Coming soon...</h1>
-    
+   <h1 style="top: 50%; position: absolute; left: 50%; z-index: 5; color: white; transform: translate(-50%, -50%);">Coming soon...</h1>
+   <img id="Fish" onclick="Pet()"
+    style="cursor: pointer; bottom: 20%; position: absolute; left: 50%; color: white; transform: translate(-55%, -0%);  width: 150px; height: 150px;" 
+    src="https://github.com/WebPage0/pages/blob/main/BakeSale/Fishy.png?raw=true" 
+    />
+
+    <h1 id="Count" style="display: none; bottom: 0; position: absolute; left: 50%; color: white; transform: translate(-50%, -100%);">---</h1>
+
+    <script>
+      var petCount = 0;
+      var wording = " Times"
+      function Pet() {
+        petCount++
+        if(petCount===1) {
+          wording = " Time"
+        } else {
+          wording = " Times"
+        }
+        document.getElementById("Count").style.display = "block"
+        document.getElementById("Count").innerHTML = "You have petted the fishy " + petCount + wording;
+      }
+    </script>
+
+
 </body>
 </html>
