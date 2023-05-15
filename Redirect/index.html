@@ -1,0 +1,237 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Check This Out!</title>
+</head>
+<style>
+body {
+  background-color: gray;
+}
+
+.icon {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 32px;
+  position: relative;
+}
+
+.confetti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  background: #ffd300;
+  top: 0;
+  opacity: 0;
+}
+.confetti-piece:nth-child(1) {
+  left: 7%;
+  transform: rotate(44deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 205ms;
+          animation-delay: 205ms;
+  -webkit-animation-duration: 1082ms;
+          animation-duration: 1082ms;
+}
+.confetti-piece:nth-child(2) {
+  left: 14%;
+  transform: rotate(15deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 417ms;
+          animation-delay: 417ms;
+  -webkit-animation-duration: 893ms;
+          animation-duration: 893ms;
+}
+.confetti-piece:nth-child(3) {
+  left: 21%;
+  transform: rotate(-8deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 452ms;
+          animation-delay: 452ms;
+  -webkit-animation-duration: 751ms;
+          animation-duration: 751ms;
+}
+.confetti-piece:nth-child(4) {
+  left: 28%;
+  transform: rotate(-16deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 359ms;
+          animation-delay: 359ms;
+  -webkit-animation-duration: 834ms;
+          animation-duration: 834ms;
+}
+.confetti-piece:nth-child(5) {
+  left: 35%;
+  transform: rotate(33deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 70ms;
+          animation-delay: 70ms;
+  -webkit-animation-duration: 1092ms;
+          animation-duration: 1092ms;
+}
+.confetti-piece:nth-child(6) {
+  left: 42%;
+  transform: rotate(-28deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 92ms;
+          animation-delay: 92ms;
+  -webkit-animation-duration: 986ms;
+          animation-duration: 986ms;
+}
+.confetti-piece:nth-child(7) {
+  left: 49%;
+  transform: rotate(-6deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 171ms;
+          animation-delay: 171ms;
+  -webkit-animation-duration: 842ms;
+          animation-duration: 842ms;
+}
+.confetti-piece:nth-child(8) {
+  left: 56%;
+  transform: rotate(-10deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 387ms;
+          animation-delay: 387ms;
+  -webkit-animation-duration: 1105ms;
+          animation-duration: 1105ms;
+}
+.confetti-piece:nth-child(9) {
+  left: 63%;
+  transform: rotate(-39deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 281ms;
+          animation-delay: 281ms;
+  -webkit-animation-duration: 745ms;
+          animation-duration: 745ms;
+}
+.confetti-piece:nth-child(10) {
+  left: 70%;
+  transform: rotate(30deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 475ms;
+          animation-delay: 475ms;
+  -webkit-animation-duration: 721ms;
+          animation-duration: 721ms;
+}
+.confetti-piece:nth-child(11) {
+  left: 77%;
+  transform: rotate(-47deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
+  -webkit-animation-duration: 1094ms;
+          animation-duration: 1094ms;
+}
+.confetti-piece:nth-child(12) {
+  left: 84%;
+  transform: rotate(-59deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 16ms;
+          animation-delay: 16ms;
+  -webkit-animation-duration: 734ms;
+          animation-duration: 734ms;
+}
+.confetti-piece:nth-child(13) {
+  left: 91%;
+  transform: rotate(64deg);
+  -webkit-animation: makeItRain 1000ms infinite ease-out;
+          animation: makeItRain 1000ms infinite ease-out;
+  -webkit-animation-delay: 437ms;
+          animation-delay: 437ms;
+  -webkit-animation-duration: 810ms;
+          animation-duration: 810ms;
+}
+.confetti-piece:nth-child(odd) {
+  background: #17d3ff;
+}
+.confetti-piece:nth-child(even) {
+  z-index: 1;
+}
+.confetti-piece:nth-child(4n) {
+  width: 5px;
+  height: 12px;
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+}
+.confetti-piece:nth-child(3n) {
+  width: 3px;
+  height: 10px;
+  -webkit-animation-duration: 2500ms;
+          animation-duration: 2500ms;
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+.confetti-piece:nth-child(4n-7) {
+  background: #ff4e91;
+}
+
+@-webkit-keyframes makeItRain {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(400px);
+  }
+}
+
+@keyframes makeItRain {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(400px);
+  }
+}
+</style>
+<body>
+
+       <h1 style="left: 50%; color: white; font-family: Arial, Helvetica, sans-serif; border-radius: 15px; background: rgba(39, 39, 39, 0);  top: 50%; position: fixed;  transform: translate(-50%, -50%); "> Redirecting... </h1>
+   
+
+    <script>
+        var currentUrl = new URL(window.location.href);
+        var type = currentUrl.searchParams.get("type")
+        var name = currentUrl.searchParams.get("name")
+        // Check for the presence of the "text" parameter in the URL
+        if (type === 'M') {
+        // Set the text of the element to the value of the "text" parameter
+               setTimeout(() => {
+                //window.location = 'https://webpage0.github.io/pages/MothersDay?name=' + name;
+               }, 2000);
+        
+        }
+       
+
+    </script>
+
+  
+</body>
+</html>
