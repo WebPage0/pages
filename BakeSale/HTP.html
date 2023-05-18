@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+    <script src="https://printjs-4de6.kxcdn.com/print.min.css"></script>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="https://github.com/WebPage0/pages/blob/main/BakeSale/logo.png?raw=true">
+<title>Bake Sale - How To Play</title>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<style>
+
+
+body {
+  background: #1d1d1d;
+  font-family: Arial, Helvetica, sans-serif;
+  background-repeat: repeat;
+
+
+  margin: 0;
+}
+
+img {
+  
+  margin: 10px;
+position: relative;
+z-index: 1;
+}
+
+.btn-group button {
+  background-color: black; /* Green background */
+ 
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: grey;
+}
+
+/* Header/Logo Title */
+.header-halloween {
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #ff7d31, rgb(39, 39, 39), rgb(39, 39, 39));
+  color: white;
+  width: auto;
+  font-size: 30px;
+  position: relative;
+z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+.header {
+  position: relative;
+z-index: 1;
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
+  color: white;
+  width: auto;
+  font-size: 30px;
+ 
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 15px;
+}
+
+/* Page Content */
+
+
+.box {
+
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.box:hover {
+    background-color: #3b3b3b;
+    border-radius: 25px;
+}
+
+
+</style>
+
+
+<body>
+  <div style="position: relative; top: 0; width: 100%; height: 50px; background-color: #343434;">
+    <h1 style="left: 55px; font-size: larger; top: 3px; color: white; position: absolute;">Bake Sale</h1>
+    <img style="width: 35px; height: 35px;" src="https://github.com/WebPage0/pages/blob/main/BakeSale/logo.png?raw=true" />
+    <div style="position: relative; float: right;height: 10px; width: 20px;"></div>
+    <style>
+        .menuItem {
+            color: white;
+            border-radius: 15px;
+            transition: 0.8s;
+        }
+        .menuItem:hover {
+            color: rgb(208, 208, 208);
+            transform: scale(1.1);
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+        from {
+           
+            text-shadow: 0 0 10px #fff;
+        }
+        to {
+            
+            text-shadow: 0 0 20px #fff;
+        }
+        }
+    </style>
+    
+    <h1 class="menuItem" style="cursor: pointer; font-size: larger;   float: right; color: white; position: relative;">How To Play</h1>
+    <div  style="position: relative; float: right;height: 10px; width: 20px;"></div>
+    <h1 class="menuItem" style="cursor: pointer;  font-size: larger; float: right; color: white; position: relative;">Home</h1>
+
+  </div>   
+
+  <br>
+ <button type="button" onclick="printJS('docs/printjs.pdf')">
+    Print The Rules
+ </button>
+
+ <div class="box">
+   <h1  style="color: white; text-align: center;">How To Play Bake Sale</h1>
+ </div>
+   <br>
+   <div class="box">
+        <h1 style="color: white; margin: 20px;">Setup:</h1>
+        <br>
+        <p  style="color: white;  text-align: center;">1st place the cards in the center of your play area or board.</p>
+        <p  style="color: white;  text-align: center;">Then get a piece of paper to keep track of everyones scores.</p>
+    
+    </div>
+
+    <div class="box">
+        <h1  style="color: white; margin: 20px;">How to play:</h1>
+
+        <br>
+
+        <p   style="color: white;  text-align: center;"> (Each person will have a turn) go clockwise when its a players turn they will draw a card and place it in their area, the goal is to get to 100 points the last person to 100 points loses.</p>
+
+    </div>
+  <br>
+
+
+  <br>
+  <div class="box">
+  <h1  style="color: white; margin: 20px;">About The Cards:</h1>
+ <br>
+ <p style="color: white;  text-align: center;">The cards have many diffrent outcomes such as:</p>
+ 
+  </div>
+  <div class="box">
+ <br>
+ 
+ <p  style="color: white;  text-align: center;">1. Success Card - This card gives you 5 points.</p>
+
+
+  <br>
+  </div>
+  <div class="box">
+  <p style="color: white;  text-align: center;">2. The "Yuck!" Card - This card remove 5 points.</p>
+  </div>
+  <br>
+  <div class="box">
+  <p   style="color: white;  text-align: center;">The lucky Card - This card gives you 10 points but in addition lets you avoid any card that removes points (this is only effective for 1 card).</p>
+  
+  <br>
+  </div>
+  <div class="box">
+  <p  style="color: white;  text-align: center;">Sabotage Card - A player you pick has to give you 5 points.</p>
+  </div>
+  <br>
+  <div class="box">
+  <p  style="color: white;  text-align: center;">blessed  - give someone besides you 5 points (does not come out of your points)</p>
+  </div>
+  <div class="box">
+  <p  style="color: white;  text-align: center;">A player can trade  their card with someone but the player that wanted to trade will have their turn skipped next time.</p>
+  </div>
+
+
+
+  <div class="box">
+  <br>
+
+  <p class="box" style="color: white;  text-align: center;">Have Fun!</p>
+  </div>
+
+  <script>
+  
+      </script>
+
+</body>
+</html>
