@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Google tag (gtag.js) -->
+
+<link rel="icon" href="https://github.com/WebPage0/pages/blob/main/FinderSou.png?raw=true">
+<title>Source Finder - FNF NEO</title>
+<meta property="og:image" content="https://github.com/WebPage0/pages/blob/main/FinderSou.png?raw=true" />
+<meta name="description" content="Find Source Code In One Click!">
+<style>
+    body {
+        margin: 0;
+
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(45, 45, 45);
+    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  height: 70px;
+  padding: 0 50px;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #5c5c5c;
+}
+
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #383838;
+  background-color: #272727;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.button:hover {
+  background: #6c6c6c;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2d2d2d;
+}
+
+.button:active {
+  border: 1px solid #2b2b2b;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+          <img  src="https://github.com/WebPage0/pages/blob/main/SF.png?raw=true"  alt="Logo">
+        </div>
+        <ul class="nav-links">
+       
+          <!--li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li-->
+        </ul>
+      </nav>
+
+
+      <div id="Alert"  style="display: none; width: 70%; height: 300px; border-radius: 30px; background-color: rgb(40, 40, 40); position: absolute; z-index: 100; transform: translate(-50%, -50%); top: 50%; left: 50%;">
+        <h1 id="G" style="text-align: center; color: white;">Getting Ready...</h1>
+        <h1 id="C" onclick="document.getElementById('Alert').style.display = 'none' " style="cursor: pointer; display: none; text-align: center; color: white;">Close</h1>
+
+        <h1 id="info" style="text-align: center; color: white;">...</h1>
+        <h1  id="St" onclick="window.open('https://github.com/MaysLastPlay10/FNF-Neo/archive/refs/heads/master.zip')" style=" display: none; cursor: pointer; text-align: center; color: white;">Did it Start? If Not Click Me!</h1>
+
+      </div>
+
+      <div style=" border-radius: 30px;  position: relative; left: 50%; transform: translate(-50%, 10%);border: 6px solid rgb(55, 55, 55);   z-index: 7;  width: 80%; height: 300px; top: 10%;">
+        <h1 style="text-align: center; color: white; z-index: 9; position: absolute; margin: 15px;">FNF Neo Source Code</h1>
+        <h3 style="text-align: center; color: white; z-index: 9; position: absolute; margin-left: 15px; margin-top: 55px;">A Mod For Friday Night Funkin</h3>
+
+        <h3 style="text-align: center; color: white; z-index: 9; position: absolute; margin-left: 15px; bottom: 0px;">Github Repository: </h3>
+        <h3 style="text-align: center; color: rgb(159, 155, 155); z-index: 9; position: absolute; margin-left: 190px; bottom: 0px;">Down </h3>
+        
+        <button onclick="Download()" class="button" style="right: 16px; border-radius: 5px; bottom: 5px; position: absolute; z-index: 9;" type="button">
+          <span class="button__text">Download</span>
+          <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+        </button>
+
+        <div style=" background: url('https://github.com/WebPage0/pages/blob/main/FNF.png?raw=true'); background-size: cover; border-radius: inherit; filter: blur(5px);  height: 100%; width: 100%; background-repeat: no-repeat;   background-position: center;  ">
+         
+        </div>
+      </div>
+
+      <script>
+            function Download() {
+                document.getElementById('Alert').style.display = 'block'
+                var info = document.getElementById('info')
+
+                info.innerHTML = "Requesting Files..."
+
+                setTimeout(() => {
+                  info.innerHTML = "Counting The Sheep..."
+                  setTimeout(() => {
+                    info.innerHTML = "Adding Files..."
+                    setTimeout(() => {
+                      info.innerHTML = "Starting Download..."
+                      window.open('https://github.com/MaysLastPlay10/FNF-Neo/archive/refs/heads/master.zip')
+                      document.getElementById('St').style.display = "block"
+                      document.getElementById('G').style.display = "none"
+                      document.getElementById('C').style.display = "block"
+                    }, 1000);
+                  }, 2000);
+                }, 3000);
+            }
+      </script>
+      
+
+</body>
+
+</html>
