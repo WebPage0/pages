@@ -1,0 +1,158 @@
+<html>
+    <title>
+        Savanna Biome
+    </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: rgb(35, 35, 35);
+        }
+        @keyframes show {
+            from{opacity: 0; transform: translateX(-50%) translateY(50%);}
+
+            to{opacity: 1; transform: translateX(-50%) translateY(0%);}
+        }
+        @keyframes showimg {
+            from{opacity: 0; transform: scale(0.5); }
+
+            to{opacity: 1; transform: scale(1.0);}
+        }
+
+        #map { border-radius: 15px; width: 98%; left: 50%; transform: translateX(-50%); margin-top: 15px; position: relative; height: 400px; }
+
+    </style>
+    <body>
+        <div style="animation: show 0.8s; border-radius: 15px; width: 95%; height: 250px; background-color: rgb(65, 65, 65); top: 50px; left: 50%; transform: translateX(-50%); position: relative;">
+            <img id="bgimgtop" style="transition: 0.5s; width: 100%; opacity: 0; height: 100%; position: relative; border-radius: 15px; filter: brightness(70%) blur(2px);  object-fit: cover; animation: showimg 0.5s 1.0s;" src="https://s3-us-west-1.amazonaws.com/contentlab.studiod/getty/5006c6153d7c4959a356f2709e0643ce.jpg"/>
+
+            <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -80%);">
+                Savanna Biome
+            </h1>
+            <div style="width: 95%; left: 50%; min-width: 700px;  max-width: 825px; height: 300px; border-radius: 15px; transform: translateX(-50%); position: relative; background-color: rgba(85, 85, 85, 0.4);">
+
+                <p style="position: relative; top: 50%;  transform: translateY(-50%);  left: 20px; width: 50%; ">
+                    A savanna or savannah is a mixed woodland-grassland (i.e. grassy woodland) ecosystem characterised by the trees being sufficiently widely spaced so that the canopy does not close. The open canopy allows sufficient light to reach the ground to support an unbroken herbaceous layer consisting primarily of grasses. According to Britannica, there exists four savanna forms; savanna woodland where trees and shrubs form a light canopy, tree savanna with scattered trees and shrubs, shrub savanna with distributed shrubs, and grass savanna where trees and shrubs are mostly nonexistent.
+                    <a style="color: white;" href="https://en.wikipedia.org/wiki/Savanna">
+                        From: Wikipedia
+                    </a>
+                </p>
+
+                <img style="right: 20px; position: absolute; top: 40px; border-radius: 15px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarangire-Natpark800600.jpg/280px-Tarangire-Natpark800600.jpg"/>
+
+            </div>
+
+            <div id="map"></div>
+            <p style="text-align: center;">Savanna Biome In Africa Outlined *Estimation*</p>
+            <br>
+            <br>
+
+            <h1 style="text-align: center;">25 animals In The Savanna:</h1>
+            <p style="text-align: center;">
+                African Elephant
+                <br>
+                Lion
+                <br>
+                Giraffe
+                <br>
+                African Buffalo (Cape Buffalo)
+                <br>
+                African Leopard
+                <br>
+                Cheetah
+                <br>
+                Wildebeest
+                <br>
+                Zebra
+                <br>
+                Hippopotamus
+                <br>
+                Rhinoceros
+                <br>
+                Warthog
+                <br>
+                African Wild Dog 
+                <br>
+                Impala
+                <br>
+                Thomson's Gazelle
+                <br>
+                Grant's Gazelle
+                <br>
+                Ostrich
+                <br>
+                Secretary Bird
+                <br>
+                Marabou Stork
+                <br>
+                Vulture
+                <br>
+                African Fish Eagle
+                <br>
+                Meerkat
+                <br>
+                Hyena
+                <br>
+                Baboon
+                <br>
+                African Elephant Shrew
+                <br>
+                African Hare
+                <br>
+                <br>
+                <br>
+            </p>
+            <footer style="width: 100%; height: 300px;">
+                <div style="width: 100%; border-radius: 15px; height: 100%; position: relative; background-color: rgba(53, 53, 53, 0.726);">
+                    <h1 style=" text-align: center; font-size: 20px; position: relative; top: 20px;">Made For A School project (:</h1>
+                    <p style="text-align: center; position: relative; top: 10px;">Check Out My Other 2 Projects: <br> <a style="color: white;" href="https://sz-games.github.io">My Game Site</a> <br> <a style="color: white;" href="https://sz-games.github.io/weather">My Weather Site</a></p>
+                </div>
+                <br>
+                
+            </footer>
+            <script>
+
+                var map = L.map('map').setView([4.241389, 21.407500], 3);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+                
+                var polygon = L.polygon([
+                    [-12.593722, 13.391806],
+                    [-20.487528, 15.060028],
+                    [-25.737111, 28.213972],
+                    [-19.562972, 34.572917],
+                    [-14.451889, 40.557056],
+                    [-4.624639, 39.089222],
+                    [11.001806, 49.638111],
+                    [11.138444, 40.009306],
+                    [19.458472, 37.049500],
+                    [17.887583, -16.024972],
+                    [14.807472, -15.929833],
+                    [3.712278, 10.993000] 
+                    
+                ]).addTo(map);
+                polygon.bindPopup("Savanna Biome Outlined").openPopup();
+
+
+
+                var backimgtop = document.getElementById('bgimgtop')
+
+                setTimeout(() => {
+                    backimgtop.style.opacity = 1
+
+                }, 1500);
+            </script>
+        </div>
+    </body>
+</html>
